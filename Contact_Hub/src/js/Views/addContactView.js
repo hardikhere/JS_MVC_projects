@@ -18,9 +18,9 @@ class AddContactFormView {
 
     toggleView(e) {
         e.preventDefault();
-        this.errors = [];
         console.log("going to toggle")
         this.modal.classList.toggle("hidden");
+        this.clearForm();
     }
 
     addFormSubmitHandler(handler) {
@@ -33,6 +33,7 @@ class AddContactFormView {
             }
             if (typeof handler === "function") {
                 handler(e);
+                this.clearForm();
                 this.toggleView(e);
             }
         });
@@ -42,6 +43,7 @@ class AddContactFormView {
         console.log(this.parentElement)
         this.parentElement.querySelector("#contact_name").value = "";
         this.parentElement.querySelector("#contact_phone").value = "";
+        this.parentElement.querySelector(".add_contact_errors").innerHTML = "";
     }
 
     checkErrors() {
@@ -64,7 +66,7 @@ class AddContactFormView {
             errHTML += `<li>${err}</li>`
         });
         errHTML += `</ul></div>`;
-        this.parentElement.insertAdjacentHTML("afterbegin", errHTML)
+        this.parentElement.querySelector(".add_contact_errors").innerHTML = errHTML;
     }
 };
 

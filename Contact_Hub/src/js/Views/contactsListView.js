@@ -1,28 +1,60 @@
+
+
 class contactListsView {
     _parentElement = document.querySelector(".contact_lists_container");
 
     render(data) {
         this._data = data;
-        let htmlString = this._generateHTMLString();
-        this._parentElement.firstElementChild.innerHTML = htmlString;
-    }
+        let PersonCards = this._generatePersonCards();
+        this._parentElement.replaceChild(PersonCards, this._parentElement.firstChild)
+    };
 
-    _generateHTMLString() {
-        let html = `<ul class="flex col">`;
+    _generatePersonCards() {
+        let list = document.createElement("ul");
+        list.style.overflow = "auto"
+        list.style.height = "100%";
+        list.style.width = "100%";
+        list.classList.add("flex", "col");
         if (Array.isArray(this._data)) {
             this._data.forEach(contact => {
-                html += `<li class="person_card">
-                <div class="user_icon"></div>
-                <div class="flex col person_card_details">
-                  <b>${contact.name}</b> 
-                  <div>${contact.phone}</div>
-                </div>
-                </li>`;
+                let personCard = this._getPersonCardElement(contact);
+                list.appendChild(personCard);
             })
-            html += "</ul>";
         } else throw TypeError("Data for ContactListView must be an array")
-        return html;
+        return list;
+    };
+
+    addDeleteCardEventListener(handler) {
+        this.onDelete = handler;
     }
+
+    _getPersonCardElement(contact) {
+        const name = contact.name;
+        const phone = contact.phone;
+        const id = contact.id;
+        let element = document.createElement("li");
+        element.classList.add("person_card");
+        element.innerHTML = `
+        <div class="user_icon"></div>
+        <div class="flex col person_card_details">
+          <b>${name}</b> 
+          <div>${phone}</div>
+        </div>`;
+        let deleteBtn = document.createElement("button");
+        deleteBtn.classList.add("delete_btn");
+        deleteBtn.textContent = "Delete"
+        deleteBtn.classList.toggle("hidden");
+        deleteBtn.style.marginLeft = "auto"
+        deleteBtn.addEventListener("click", this.onDelete.bind(this, id));
+        element.append(deleteBtn);
+        element.addEventListener("mouseover", this.toggleShowOptions.bind(this, deleteBtn));
+        element.addEventListener("mouseout", this.toggleShowOptions.bind(this, deleteBtn));
+        return element;
+    }
+
+    toggleShowOptions(element) {
+        element.classList.toggle("hidden")
+    };
 };
 
 export default new contactListsView();

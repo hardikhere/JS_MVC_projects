@@ -22,3 +22,24 @@ input:focus {
   padding: 1rem;
   border-radius: 1rem;
 }
+
+.delete_btn {
+  background-color: rgb(223, 93, 93);
+  color: white;
+  border-radius: 0.4rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  max-width: 10rem;
+  font-size: 1rem;
+  height: 2rem;
+}
+
+
+.delete_btn:focus {
+  outline: none;
+}
+.delete_btn:hover {
+  box-shadow: 0px 2px 2px 0px rgba(95, 95, 95, 0.2);
+  background-color:  rgb(238, 99, 99);
+}

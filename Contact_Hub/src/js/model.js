@@ -1,13 +1,21 @@
+export var state = {
+    isSearching: false
+}
+
+
+
 export class ContactPerson {
     constructor(name, phone) {
         this.name = name;
         this.phone = phone;
+        this.id = `${name}-${phone}`;
     }
 
     saveContactInLs() {
         const contact = {
             name: this.name,
-            phone: this.phone
+            phone: this.phone,
+            id: this.id
         };
         let mylist = localStorage.getItem("mylist");
         if (!mylist) {
