@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <script defer src="src/js/controller.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Hub</title>
+</head>
+
+<body>
+    <div class="overlay hidden add_contact_modal flex justify-center items-center">
+        <form class="add_contact_form flex col">
+            <div class="form_control flex items-center" style="justify-content: space-between;">
+                <label for="contact_name">Name</label>
+                <input id="contact_name" placeholder="Enter Name" type="text">
+            </div>
+            <div class="form_control flex items-center" style="justify-content: space-between;">
+                <label for="contact_phone">Phone No.</label>
+                <input id="contact_phone" placeholder="Enter Phone No." type="number">
+            </div>
+
+            <div class="form_control">
+                <button type="submit" class="btn">Submit</button>
+                <button class="btn add_contact_modal_close">Close</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="container">
+        <div class="contact-box">
+            <button class="btn add_contact_btn">Add Contact</button>
+
+            <div class="search_container flex" style="justify-content: space-evenly;">
+                <input type="text" id="search_input" placeholder="Search by name or phone no." style="width: 70%;">
+                <div>
+                    <button id="search_btn" class="btn flex justify-center items-center">
+                        <img src="src/icons/search-solid.svg" style="width: 1rem; height: 1rem;" alt="">
+                    </button>
+                    <button id="search_btn_clear" class="remove btn">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="contact_lists_container">
+                <div style="overflow:auto; height: 100%;width: auto;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

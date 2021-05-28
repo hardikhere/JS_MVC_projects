@@ -1,0 +1,24 @@
+.form_control {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  padding-left: 0.7rem;
+  outline: none;
+  border: none;
+  background-color: rgb(240, 240, 240);
+  border-radius: 2rem;
+}
+
+input:focus {
+  background-color: rgb(228, 228, 228);
+}
+
+.add_contact_form {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}

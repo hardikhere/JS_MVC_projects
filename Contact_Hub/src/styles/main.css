@@ -1,0 +1,77 @@
+@import "./cardStyle.css";
+@import "./formStyle.css";
+@import "./modalStyle.css";
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.remove {
+  display: none !important;
+}
+
+html,
+body {
+  background: rgb(62, 159, 159);
+  background: -moz-linear-gradient(
+    135deg,
+    rgba(62, 159, 159, 1) 0%,
+    rgba(244, 119, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    135deg,
+    rgba(62, 159, 159, 1) 0%,
+    rgba(244, 119, 255, 1) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(62, 159, 159, 1) 0%,
+    rgba(244, 119, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3e9f9f",endColorstr="#f477ff",GradientType=1);
+  margin: 0%;
+  padding: 0%;
+}
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: dodgerblue;
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(73, 164, 255);
+}
+
+
+.error{
+  color: rgb(247, 96, 58);
+}
