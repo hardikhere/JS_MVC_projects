@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <script defer src="src/js/controller.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Manager</title>
+</head>
+
+<body>
+    <div class="body_container container">
+        <div class="left_container">
+            <div class="left_upper">
+                
+            </div>
+            <div class="left_bottom">
+                <div class="expenses_container card">
+                    expense
+                </div>
+                <div class="income_container card">
+                    income
+                </div>
+            </div>
+        </div>
+
+        <div class="add_transaction_container card">
+            <div class="balance_container">
+
+            </div>
+            <hr style="height:1px;border-width:0;color:rgb(170, 170, 170);background-color:rgb(175, 175, 175)">
+            <div style="display: flex;justify-content: center;margin-top: auto;">
+                <h3>Add Transaction</h3>
+            </div>
+            <form class="add_transaction_form">
+                <div class="form_item">
+                    <label for="tt">Type</label>
+                    <select id="tt" name="transaction_type" class="transaction_type">
+                        <option value="INCOME">Income</option>
+                        <option value="EXPENSE">Expense</option>
+                    </select>
+                </div>
+                <div class="form_item">
+                    <label for="value" style="width: 30%;">Amount</label>
+                    <input placeholder="Enter Amount" type="text" style="width: 60%;" id="value" class="amount">
+                </div>
+                <div style="display: flex;justify-content: center;margin-top: 1rem;">
+                    <button type="submit">Add Transaction</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
