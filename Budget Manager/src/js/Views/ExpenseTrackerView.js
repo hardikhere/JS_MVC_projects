@@ -1,19 +1,16 @@
 import { CURRENCY_UNIT } from "../config";
+import { View } from "./View";
 
-class ExpenseTrackerView {
+class ExpenseTrackerView extends View {
     _container = document.querySelector(".expenses_container");
-    _body_container = document.querySelector(".body_container")
-    render(data) {
-        this.data = data;
-        const html = this.#generateHTMLString();
-        this._container.innerHTML = html;
-    }
+    _filterSelect = document.querySelector(".expense_filter");
+    _totalBox = document.querySelector(".total_expense")
 
     addRenderHandler(handler) {
         this._body_container.addEventListener("StorageChange", handler.bind(this))
     }
 
-    #generateHTMLString() {
+    generateHTMLString() {
         let html = `<div style="overflow=auto;width=100%;height=100%">`;
         if (Array.isArray(this.data)) {
             this.data.forEach(el => {
@@ -29,8 +26,8 @@ class ExpenseTrackerView {
         return html;
     }
 
-    #getDateByTimeStamp(timestamp){
-        let date =  new Date(timestamp);
+    #getDateByTimeStamp(timestamp) {
+        let date = new Date(timestamp);
         return date.toDateString();
     }
 };

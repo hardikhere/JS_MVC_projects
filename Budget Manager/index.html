@@ -13,16 +13,42 @@
 <body>
     <div class="body_container container">
         <div class="left_container">
-            <div class="left_upper">
-                
-            </div>
-            <div class="left_bottom">
+            <div style="display: flex;flex-direction: column;width: 45%;">
+                <div style="display: flex; justify-content: space-between;">
+                    <div class="red" style="font-weight: bolder;padding: 0.5rem;font-size: 1.1rem;">Expense</div>
+                    <div>
+                        Sort by
+                        <select name="sortby" id="expense_filter" class="expense_filter">
+                            <option value="none">Date</option>
+                            <option value="Amount+">Decreasing Amount</option>
+                            <option value="Amount-">Increasing Amount</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="expenses_container card">
-                    expense
+
+                </div>
+
+            </div>
+
+            <div style="display: flex;flex-direction: column;width: 45%;">
+                <div style="display: flex; justify-content: space-between;">
+                    <div class="green" style="font-weight: bolder;padding: 0.5rem;font-size: 1.1rem;">
+                        Income
+                    </div>
+                    <div>
+                        Sort by
+                        <select name="sortby" id="expense_filter" class="income_filter">
+                            <option value="none">Date</option>
+                            <option value="Amount+">Decreasing Amount</option>
+                            <option value="Amount-">Increasing Amount</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="income_container card">
-                    income
+
                 </div>
+
             </div>
         </div>
 
