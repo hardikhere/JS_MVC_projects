@@ -8,14 +8,6 @@ class AddTransactionView {
         this._form.addEventListener("submit", (e) => {
             handler(e);
             self.clearForm();
-            const ev = new CustomEvent("StorageChange", {
-                detail: {
-                    type: self._type.value
-                },
-                bubbles: true
-            });
-            self._amount.dispatchEvent(ev);
-            console.log(ev)
         });
     }
 
