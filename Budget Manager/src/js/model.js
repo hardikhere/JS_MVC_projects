@@ -16,23 +16,5 @@ export class Transaction {
         this.id = `${type}-${value}-${this.#secret}`;
         this.timestamp = Date.now();
     }
-
-    saveTransactionInLS() {
-        let list = localStorage.getItem("transactions");
-        let toSave = {
-            type: this._type,
-            value: this._value,
-            time: this.timestamp,
-            id: this.id
-        }
-        if (list) {
-            list = JSON.parse(list);
-            list.push(toSave)
-        }
-        else {
-            list = [toSave];
-        }
-        localStorage.setItem("transactions", JSON.stringify(list))
-    }
 };
 
