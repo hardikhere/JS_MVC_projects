@@ -1,8 +1,8 @@
 import { CURRENCY_UNIT } from "../config";
 
 class ShowBalanceView {
-    _parentElement = document.querySelector(".add_transaction_container");
-    _container = this._parentElement.querySelector(".balance_container");
+    _container = document.querySelector(".balance_container");
+
     render(data) {
         this.data = data;
         const balance = this.getTotalBalance();
@@ -10,9 +10,6 @@ class ShowBalanceView {
         this._container.innerHTML = this.#generateHTMLString();
     };
 
-    addRenderListnerHandler(handler) {
-        this._parentElement.addEventListener("StorageChange", handler.bind(this));
-    }
 
     #generateHTMLString() {
         return `

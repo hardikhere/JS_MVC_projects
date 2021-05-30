@@ -20,6 +20,13 @@ const controlAddTransaction = (event) => {
     const transaction = new Transaction(type, amount);
     saveTransactionInLS(type, transaction);
     AddTransactionView.clearForm();
+    if (type === transactionType.EXPENSE) {
+        ExpenseTrackerView.pushTransactionCard(transaction);
+    }
+    else {
+        IncomeTrackerView.pushTransactionCard(transaction);
+    }
+    controlShowBalance();
 }
 
 
@@ -33,17 +40,6 @@ const controlShowBalance = () => {
         expense
     })
 };
-
-const controlUpdateExpenseList = (ev) => {
-    if (ev.detail.type === transactionType.EXPENSE)
-        ExpenseTrackerView.render(getTransactionsFromLS(transactionType.EXPENSE))
-};
-
-const controlUpdateIncomeList = (ev) => {
-    if (ev.detail.type === transactionType.INCOME)
-        IncomeTrackerView.render(getTransactionsFromLS(transactionType.INCOME))
-};
-
 
 const compareAmountFn = (a, b, flag) => {
     if (flag) {
@@ -112,13 +108,14 @@ const controlFilterChange = (ev) => {
 
 const init = () => {
     AddTransactionView.addSubmitHandler(controlAddTransaction);
-    ShowBalanceView.addRenderListnerHandler(controlShowBalance)
     controlShowBalance();
-    ExpenseTrackerView.addRenderHandler(controlUpdateExpenseList)
+
     ExpenseTrackerView.render(getTransactionsFromLS(transactionType.EXPENSE))
-    IncomeTrackerView.addRenderHandler(controlUpdateIncomeList)
+    ExpenseTrackerView.addFilterEventHandler(controlFilterChange)
+
+
     IncomeTrackerView.render(getTransactionsFromLS(transactionType.INCOME))
     IncomeTrackerView.addFilterEventHandler(controlFilterChange)
-    ExpenseTrackerView.addFilterEventHandler(controlFilterChange)
+
 };
 init();

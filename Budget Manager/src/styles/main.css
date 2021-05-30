@@ -52,7 +52,6 @@ html {
   width: 75%;
 }
 
-
 .expenses_container {
   width: 100%;
   height: 100%;
@@ -92,10 +91,10 @@ html {
 
 .add_transaction_form {
   font-size: 1.2rem;
-  padding:0.3rem;
+  padding: 0.3rem;
 }
 
-.add_transaction_form>*{
+.add_transaction_form > * {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -114,8 +113,6 @@ select.option {
   padding: 0.5rem 1rem;
 }
 
-
-
 button {
   padding: 0.6rem 1.2rem;
   background-color: rgb(11, 172, 194);
@@ -124,18 +121,18 @@ button {
   border-radius: 1rem;
   font-size: 1.1rem;
 }
-button:hover{
+button:hover {
   background-color: rgb(18, 191, 214);
   cursor: pointer;
   box-shadow: 0px 4px 4px 0px rgba(105, 105, 105, 0.295);
 }
 
-.form_item{
+.form_item {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-input{
+input {
   color: rgb(56, 56, 56);
   font-size: 1.1rem;
   border: none;
@@ -145,18 +142,30 @@ input{
   padding: 0.2rem;
 }
 
-.balance{
+.balance {
   font-size: 2rem;
   font-family: "Raleway", sans-serif !important;
   font-weight: bolder;
 }
 
-.transaction_card{
+.transaction_card {
   margin-top: 0.5rem;
+  transition: all 0.4s ease;
+  animation-name: show;
+  animation-duration: 0.2s;
   padding: 0.4rem;
   border-radius: 0.2rem !important;
 }
 
-.transaction_card:hover{
-  background-color:whitesmoke;
+.transaction_card:hover {
+  background-color: whitesmoke;
+}
+
+@keyframes show {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
 }
