@@ -20,7 +20,8 @@ export class ListView {
     getCardHTMLString(el) {
         return ` <div class="card transaction_card" style="display:flex; justify-content:space-between">
         <div class=${el._type === "EXPENSE" ? "red" : "green"}
-         style="font-weight:bolder;"> - ${el._value} ${CURRENCY_UNIT}</div>
+         style="font-weight:bolder;"> ${el._type === "EXPENSE" ? "-" : ""}
+          ${el._value} ${CURRENCY_UNIT}</div>
         <div>${this.#getDateByTimeStamp(el.timestamp)}</div>
       </div>`
     }
