@@ -8,5 +8,5 @@ Save your contacts on chrome with search feature
 ## 2. Budget Manager :money_with_wings:   [![Netlify Status](https://api.netlify.com/api/v1/badges/78a4739a-b941-4129-92b5-74ec92ac2875/deploy-status)](https://app.netlify.com/sites/trusting-ptolemy-e991ad/deploys)
 Manage Your Budget, with filters features and nice UI :candy: , only Desktop version [See Live Demo](https://elegant-panini-0afd5e.netlify.app/):boom:
 
-![Budget Manager UI](https://raw.githubusercontent.com/hardikhere/JS_MVC_projects/master/Budget%20Manager/Screenshot%20from%202021-05-30%2012-08-37.png?token=AMF7YGE7HXEXGEEV2V24U73AXRW34)
+![Budget Manager UI](https://raw.githubusercontent.com/hardikhere/JS_MVC_projects/master/Budget%20Manager/Screenshot%20from%202021-05-30%2015-39-23.png?token=AMF7YGHE5MGL6IMR4YCLOADAXSPSE)
 
