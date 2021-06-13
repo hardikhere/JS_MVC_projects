@@ -10,28 +10,13 @@
 .remove {
   display: none !important;
 }
-
-html,
+html{
+  height: 100vh;
+}
 body {
-  background: rgb(62, 159, 159);
-  background: -moz-linear-gradient(
-    135deg,
-    rgba(62, 159, 159, 1) 0%,
-    rgba(244, 119, 255, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    135deg,
-    rgba(62, 159, 159, 1) 0%,
-    rgba(244, 119, 255, 1) 100%
-  );
-  background: linear-gradient(
-    135deg,
-    rgba(62, 159, 159, 1) 0%,
-    rgba(244, 119, 255, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3e9f9f",endColorstr="#f477ff",GradientType=1);
   margin: 0%;
   padding: 0%;
+  height: 100%;
 }
 
 .flex {
@@ -71,7 +56,6 @@ body {
   background: rgb(73, 164, 255);
 }
 
-
-.error{
+.error {
   color: rgb(247, 96, 58);
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script defer src="src/controller.js"></script>
+    <link rel="stylesheet" href="src/style/style.scss" />
+    <link rel="stylesheet" href="src/style/main.scss" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherNow</title>
+  </head>
+  <body
+    style="height: 100vh"
+    class="d-flex justify-content-center align-items-center"
+  >
+    <div class="w_card shadow p-3 mb-5 bg-body rounded">
+      <h3>WeatherNow</h3>
+      <div>
+        <form class="d-flex search_form">
+          <input
+            type="text"
+            class="form-control search_input m-1"
+            placeholder="enter city name"
+          />
+          <button type="submit" class="btn btn-primary m-1">Search</button>
+        </form>
+      </div>
+      <h3 class="city_name"></h3>
+      <div
+        class="w_info d-flex justify-content-center align-items-center"
+      ></div>
+    </div>
+  </body>
+</html>
